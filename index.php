@@ -97,35 +97,6 @@
             </div>
         </section>
 
-        <!-- RSVP Section -->
-        <section class="rsvp-section batik-bg reveal-on-scroll">
-            <h2>Konfirmasi Kehadiran</h2>
-            <form id="rsvp-form">
-                <input type="text" name="name" placeholder="Nama Anda" required>
-                <select name="status" required>
-                    <option value="">Apakah Anda akan hadir?</option>
-                    <option value="Hadir">Ya, saya akan hadir</option>
-                    <option value="Tidak Hadir">Maaf, tidak bisa hadir</option>
-                </select>
-                <button type="submit">Kirim Konfirmasi</button>
-            </form>
-            <p id="rsvp-response" class="form-response"></p>
-        </section>
-
-        <!-- Guestbook Section -->
-        <section class="guestbook-section reveal-on-scroll">
-            <h2>Buku Tamu</h2>
-            <form id="guestbook-form">
-                <input type="text" name="guest_name" placeholder="Nama Anda" required>
-                <textarea name="message" placeholder="Tulis ucapan dan doa Anda..." required></textarea>
-                <button type="submit">Kirim Ucapan</button>
-            </form>
-            <p id="guestbook-response" class="form-response"></p>
-            <div class="guestbook-entries">
-                <!-- Ucapan akan ditampilkan di sini -->
-            </div>
-        </section>
-
         <footer>
             <p>Terima kasih atas doa restu Anda.</p>
             <p>Diya & Arif</p>

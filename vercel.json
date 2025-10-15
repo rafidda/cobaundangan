@@ -1,7 +1,7 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/**/*.php", "use": "vercel-php@0.6.0" },
+    { "src": "*.php", "use": "vercel-php@0.6.0" },
     { "src": "css/**", "use": "@vercel/static" },
     { "src": "js/**", "use": "@vercel/static" },
     { "src": "img/**", "use": "@vercel/static" }
@@ -10,7 +10,6 @@
     { "src": "/css/(.*)", "dest": "/css/$1" },
     { "src": "/js/(.*)", "dest": "/js/$1" },
     { "src": "/img/(.*)", "dest": "/img/$1" },
-    { "src": "/api/(.*)", "dest": "/api/$1" },
-    { "src": "/.*", "dest": "/api/index.php" }
+    { "src": "/.*", "dest": "/index.php" }
   ]
 }
