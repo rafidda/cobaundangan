@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = new FormData(rsvpForm);
             const responseElement = document.getElementById('rsvp-response');
 
-            fetch('save_rsvp.php', {
+            fetch('/api/save_rsvp.php', {
                 method: 'POST',
                 body: formData
             })
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const formData = new FormData(guestbookForm);
             const responseElement = document.getElementById('guestbook-response');
 
-            fetch('save_guestbook.php', {
+            fetch('/api/save_guestbook.php', {
                 method: 'POST',
                 body: formData
             })
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // 6. Load Guestbook Entries
     function loadGuestbook() {
-        fetch('get_guestbook.php')
+        fetch('/api/get_guestbook.php')
             .then(response => response.json())
             .then(data => {
                 const entriesContainer = document.querySelector('.guestbook-entries');
