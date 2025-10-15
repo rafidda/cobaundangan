@@ -1,0 +1,421 @@
+/* Reset and Basic Setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #FDF8F0; /* Warna krem lembut */
+    color: #5D4037; /* Coklat tua untuk teks */
+    line-height: 1.8;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+/* Fonts */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: #4E342E; /* Coklat lebih gelap */
+}
+
+h1 {
+    font-size: 4rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+h4 {
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Utility Classes */
+.hidden {
+    display: none;
+}
+
+/* --- Cover Section --- */
+.cover-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url('../img/bg_cover_jawa.jpg') no-repeat center center/cover;
+    color: #fff;
+    position: relative;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out; /* Transisi untuk keluar */
+}
+
+.cover-section.exit {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.cover-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay gelap */
+}
+
+.cover-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.cover-content h1 {
+    color: #FFD700; /* Warna Emas */
+    text-shadow: 3px 3px 6px rgba(0,0,0,0.5);
+}
+
+.cover-content p {
+    font-size: 1.1rem;
+}
+
+.guest-name {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#open-invitation {
+    background-color: #8D6E63; /* Coklat medium */
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+#open-invitation:hover {
+    background-color: #A1887F; /* Coklat lebih terang */
+    transform: translateY(-3px);
+}
+
+/* --- Main Content --- */
+main {
+    /* Hapus animasi slideUp agar tidak bentrok dengan scroll reveal */
+}
+
+/* Section Styling */
+section {
+    padding: 80px 20px;
+    border-bottom: 1px solid #E0E0E0;
+    position: relative;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+/* Pola Batik Halus untuk Latar */
+.batik-bg {
+    background-image: url('../img/batik_pattern.png'); /* Ganti dengan file pola batik */
+    background-repeat: repeat;
+    background-size: auto;
+    background-color: #EFEBE9; /* Warna dasar jika gambar tidak ada */
+}
+
+/* Header Section */
+.header-section {
+    padding: 40px 20px;
+}
+
+/* Couple Section */
+.couple-section .quote {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+.couple-profile {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.profile {
+    max-width: 300px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #D7CCC8; /* Border warna krem */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+    transition: transform 0.5s;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+.profile h3 {
+    color: #5D4037;
+}
+
+/* Countdown Section */
+.countdown-section {
+    color: #4E342E;
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.countdown-timer div {
+    background-color: rgba(253, 248, 240, 0.8); /* Sedikit transparan */
+    padding: 15px 20px;
+    border-radius: 10px;
+    min-width: 90px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+}
+
+.countdown-timer span {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Event Section */
+.event-details {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.event-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    width: 350px;
+    border-top: 5px solid #8D6E63;
+}
+
+.event-card h3 {
+    border-bottom: 2px solid #D7CCC8;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.map-container {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+/* Gallery Section */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* RSVP & Guestbook Forms */
+form {
+    max-width: 500px;
+    margin: 20px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #BCAAA4;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button[type="submit"] {
+    background-color: #5D4037;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #4E342E;
+}
+
+.form-response {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #2E7D32; /* Hijau untuk sukses */
+}
+
+/* Guestbook Entries */
+.guestbook-entries {
+    margin-top: 30px;
+    text-align: left;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.guestbook-entry {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-left: 4px solid #8D6E63;
+}
+
+.guestbook-entry strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #5D4037;
+}
+
+.guestbook-entry p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Footer */
+footer {
+    background-color: #4E342E;
+    color: #EFEBE9;
+    padding: 30px 20px;
+}
+
+footer p {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+}
+
+/* --- Animations --- */
+
+/* Initial Fade-in for Cover */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Scroll Reveal Animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .couple-profile {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .countdown-timer div {
+        min-width: 80px;
+        padding: 10px;
+    }
+    .event-details {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    section {
+        padding: 40px 15px;
+    }
+    .photo-grid {
+        grid-template-columns: 1fr 1fr; /* 2 kolom di mobile */
+        gap: 10px;
+    }
+}
