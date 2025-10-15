@@ -2,27 +2,15 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.php",
-      "use": "@vercel/php"
+      "src": "api/**/*.php",
+      "use": "vercel-php@0.6.0"
     },
     {
-      "src": "get_guestbook.php",
-      "use": "@vercel/php"
-    },
-    {
-      "src": "save_guestbook.php",
-      "use": "@vercel/php"
-    },
-    {
-      "src": "save_rsvp.php",
-      "use": "@vercel/php"
-    },
-    {
-      "src": "css/style.css",
+      "src": "css/**",
       "use": "@vercel/static"
     },
     {
-      "src": "js/script.js",
+      "src": "js/**",
       "use": "@vercel/static"
     },
     {
@@ -32,8 +20,20 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/index.php"
+      "src": "/css/(.*)",
+      "dest": "/css/$1"
+    },
+    {
+      "src": "/js/(.*)",
+      "dest": "/js/$1"
+    },
+    {
+      "src": "/img/(.*)",
+      "dest": "/img/$1"
+    },
+    {
+      "src": "/((?!api/|css/|js/|img/).*)",
+      "dest": "/api/index.php"
     }
   ]
 }
